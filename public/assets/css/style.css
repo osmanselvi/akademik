@@ -1,0 +1,13 @@
+body {
+    background-color: #f8f9fa;
+}
+header h1 {
+    font-size: 2rem;
+    color: #343a40;
+}
+footer {
+    text-align: center;
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}

@@ -1,0 +1,435 @@
+[
+    {
+        "name": "dergi_tanim",
+        "columns": [
+            {
+                "Field": "id",
+                "Type": "int",
+                "Null": "NO",
+                "Key": "PRI",
+                "Default": null,
+                "Extra": "auto_increment"
+            },
+            {
+                "Field": "dergi_tanim",
+                "Type": "varchar(50)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "yayin_created_at",
+                "Type": "varchar(50)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "ing_baslik",
+                "Type": "varchar(255)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "jenerikdosyasi",
+                "Type": "varchar(50)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "dergi_kapak",
+                "Type": "varchar(50)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "is_approved",
+                "Type": "tinyint",
+                "Null": "YES",
+                "Key": "MUL",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "created_at",
+                "Type": "date",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "created_by",
+                "Type": "int",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "created_role",
+                "Type": "int",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "ip_address",
+                "Type": "varchar(100)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            }
+        ],
+        "sample": {
+            "id": 1,
+            "dergi_tanim": "Edebiyat Bilimleri 1. Sayı, Kış 2021",
+            "yayin_created_at": "31.12.2021",
+            "ing_baslik": "Literary Sciences Issue I Winter 2021",
+            "jenerikdosyasi": "s1_jenerik.pdf",
+            "dergi_kapak": "dergikapaks1_on.png",
+            "is_approved": 0,
+            "created_at": "2022-07-18",
+            "created_by": 1,
+            "created_role": 1,
+            "ip_address": "176.41.26.231"
+        }
+    },
+    {
+        "name": "online_makale",
+        "columns": [
+            {
+                "Field": "id",
+                "Type": "int",
+                "Null": "NO",
+                "Key": "PRI",
+                "Default": null,
+                "Extra": "auto_increment"
+            },
+            {
+                "Field": "makale_turu",
+                "Type": "int",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "dergi_tanim",
+                "Type": "int",
+                "Null": "YES",
+                "Key": "MUL",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "makale_baslik",
+                "Type": "varchar(250)",
+                "Null": "YES",
+                "Key": "MUL",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "makale_yazar",
+                "Type": "varchar(250)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "mutercim",
+                "Type": "varchar(250)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "makale_ozet",
+                "Type": "varchar(8192)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "kaynakca",
+                "Type": "text",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "kaynak_dil",
+                "Type": "varchar(3)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "anahtar_kelime",
+                "Type": "varchar(250)",
+                "Null": "YES",
+                "Key": "MUL",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "yayin_created_at",
+                "Type": "date",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "kisaad",
+                "Type": "varchar(250)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "dosya",
+                "Type": "varchar(50)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "is_approved",
+                "Type": "tinyint",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "created_at",
+                "Type": "date",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "created_by",
+                "Type": "int",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "ip_address",
+                "Type": "varchar(100)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "created_role",
+                "Type": "int",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            }
+        ],
+        "sample": {
+            "id": 1,
+            "makale_turu": 2,
+            "dergi_tanim": 1,
+            "makale_baslik": "YABANCI DİL OLARAK TÜRKÇE ÖĞRETİCİLERİNİN BAKIŞ AÇISIYLA COVİD-19 SALGININDA ÖĞRETİM SÜRECİ ",
+            "makale_yazar": "Doç.Dr. Deniz MELANLIOĞLU",
+            "mutercim": "0",
+            "makale_ozet": "Türkçenin yabancı dil olarak öğretimi, Covid-19 salgınıyla birlikte aşina olmadığı bir süreç ile karşı karşıya kalmıştır. Hedef dilin öğretimi, yüz yüze sınıf içi etkileşimde dahi birtakım zorlukları barındırırken bu işin uzaktan eğitim ortamına zorunlu taşınması öğretici ve öğreniciler başta olmak üzere Türkçenin yabancı dil olarak öğretimi alanında faaliyet gösteren kurum ve kuruluşları derinden etkilemiştir. Bu bağlamda araştırmada Covid-19 salgınında Türkçenin yabancı dil olarak öğretimi sürecinin nasıl etkilendiğini öğretici bakış açısıyla belirlemek amaçlanmıştır. Belirtilen amaç doğrultusunda nitel araştırma yöntemi fenomenografi kullanılmış; araştırma verileri, yarı yapılandırılmış görüşme formu kullanılarak toplanmış ve içerik analizi ile çözümlenmiştir. Sonuçta öğretici-öğrenici etkileşiminin sağlanamaması, motivasyon düşüklüğü ve teknolojik bilgi ve donanım eksikliği gerekçeleri ile uzaktan eğitim sürecinde Türkçenin yabancı dil olarak öğretiminin olumsuz etkilediği saptanmıştır. Ayrıca öğreticilerin, uzaktan eğitim sürecinde kendilerini yetersiz hissettikleri belirlenmiştir.",
+            "kaynakca": "Akmansoy, V. (2012). Kaos teorisi ve eg&#774;itime yansımaları. (Yayımlanmamıs&#807; Yu&#776;ksek Lisans Tezi). Mehmet Akif Ersoy U&#776;niversitesi Eg&#774;itim Bilimleri Enstitu&#776;su&#776;, Burdur. \r\nAnderson, J. (2020, March). Brave New World. The coronavirus pandemic is reshaping education. Quartz. https:\/\/qz.com\/1826369\/how-coronavirus-is-changing-education\/ (Erişim created_ati: 23.11.2021)\r\nBakiog&#774;lu, B. ve C&#807;evik, M. (2020). COVID-19 pandemisi su&#776;recinde fen bilimleri o&#776;g&#774;retmenlerinin uzaktan eg&#774;itime ilis&#807;kin go&#776;ru&#776;s&#807;leri. Turkish Studies, 15(4), 109-129. \r\nBalaman, F. ve Hanbay T. S. (2021). Corona viru&#776;s (Covid-19) nedeniyle mecburi yu&#776;ru&#776;tu&#776;len uzaktan eg&#774;itim hakkında o&#776;g&#774;retmen go&#776;ru&#776;s&#807;leri. I&#775;nsan ve Toplum Bilimleri Aras&#807;tırmaları Dergisi, 10(1), 52-84. \r\nBas&#807;aran, M., ve Benseghir, R. (2021). Uzaktan Eg&#774;itimle Tu&#776;rkc&#807;e O&#776;g&#774;renme Su&#776;recinde A1 du&#776;zeyindeki Arap O&#776;g&#774;rencilerin Kars&#807;ılas&#807;tıkları Gu&#776;c&#807;lu&#776;kler ve C&#807;o&#776;zu&#776;m O&#776;nerileri, Temel Eg&#774;itim Dergisi, 12, 18-24. \r\nBayburtlu, Y.S. (2020). Covid-19 pandemi do&#776;nemi uzaktan eg&#774;itim su&#776;recinde o&#776;g&#774;retmen go&#776;ru&#776;s&#807;lerine go&#776;re Tu&#776;rkc&#807;e eg&#774;itimi. Turkish Studies, 15(4), 131-151. \r\nBozkurt, A. (2020). Koronaviru&#776;s (Covid-19) pandemisi sırasında ilko&#776;g&#774;retim o&#776;g&#774;rencilerinin uzaktan eg&#774;itime yo&#776;nelik imge ve algıları: Bir metafor analizi. Us&#807;ak U&#776;niversitesi Eg&#774;itim Aras&#807;tırmaları Dergisi, 6(2), 1- 23. \r\nBulut, S. ve Susar Kırmızı, F. (2021). Covid-19 salgını su&#776;recinde uzaktan eg&#774;itimde Tu&#776;rkc&#807;e dersine ilis&#807;kin sınıf o&#776;g&#774;retmenlerinin go&#776;ru&#776;s&#807;leri. Ac&#807;ıko&#776;g&#774;retim Uygulamaları ve Aras&#807;tırmaları Dergisi, 7(4), 1-30. \r\nCan, E. (2020). Coronaviru&#776;s (Covid-19) pandemisi ve pedagojik yansımaları: Tu&#776;rkiye’de ac&#807;ık ve uzaktan eg&#774;itim uygulamaları. Anadolu Üniversitesi Açıköğretim Uygulamaları ve Araştırmaları Dergisi, 6(2), 11-53.\r\nCanpolat, U. ve Yıldırım, Y. (2021). Ortaokul o&#776;g&#774;retmenlerinin COVID-19 salgın su&#776;recinde uzaktan eg&#774;itim deneyimlerinin incelenmesi. Ac&#807;ıko&#776;g&#774;retim Uygulamaları ve Aras&#807;tırmaları Dergisi,7(1), 74-109. \r\nÇakır, M. ve Akyavuz, K. E. (2020). Covid-19 su&#776;reci ve eg&#774;itime yansıması: o&#776;g&#774;retmen go&#776;ru&#776;s&#807;lerinin incelenmesi. International Journal of Social Sciences and Education Research, 6(2), 165-186.\r\nCreswell, J. W. (2013). Qualitative inquiry, resaerch design: Choosing among five approaches. NY: Sage. \r\nEraslan, F. ve Yücel, D. (2021). Ortaöğretim öğrencilerinin uzaktan yabancılara Türkçe öğretimine bakışı (Kazakistan ve Bosna-Hersek Örneği). Kesit Akademi Dergisi, (26), 484-499.\r\nErkut, E. (2020). Covid-19 sonrası yükseköğretim. Yükseköğretim Dergisi, 10(2), 125-133.\r\nErog&#774;lu, A. ve Okur, A. (2021). Yabancı dil olarak Tu&#776;rkc&#807;eyi uzaktan o&#776;g&#774;retenlerin uzaktan o&#776;g&#774;retime ilis&#807;kin metaforik algıları. RumeliDE Dil ve Edebiyat Aras&#807;tırmaları Dergisi, (O&#776;10), 325-338. \r\nErol Ş. A. N. (2019). Atatu&#776;rk I&#775;lkeleri ve I&#775;nkılap created_ati dersinin eg&#774;itim yoluyla o&#776;g&#774;retilmesi hakkında o&#776;g&#774;retim elemanlarının go&#776;ru&#776;s&#807;leri. Gazi U&#776;niversitesi Eg&#774;itim Faku&#776;ltesi Dergisi, 39(1), 477-502. \r\nGu&#776;ngo&#776;r, H., C&#807;angal, O&#776;. ve Demir, T. (2020). Tu&#776;rkc&#807;enin yabancı dil olarak uzaktan o&#776;g&#774;retimine ı&#775;lis&#807;kin o&#776;g&#774;renici ve o&#776;g&#774;retici go&#776;ru&#776;s&#807;leri. Gazi U&#776;niversitesi Gazi Eg&#774;itim Faku&#776;ltesi Dergisi, 40(3), 1163-1191. \r\nKac&#807;an, A. ve Gelen, I&#775;. (2020). Tu&#776;rkiye’deki uzaktan eg&#774;itim programlarına bir bakıs&#807;. Uluslararası Eğitim Bilim ve Teknoloji Dergisi, 6(1), 1-21. \r\nKamal M. İ., Zubanova S., Isaeva A. ve Movchun, V. (2021). Distance learning impact on the English language teaching during Covid-19. Education and Information Technologies, (6).\r\nKarago&#776;l, E. (2021). Uzaktan eg&#774;itim su&#776;recinde ı&#775;kinci\/yabancı dil olarak Tu&#776;rkc&#807;e o&#776;g&#774;retimi ders kitaplarına yo&#776;nelik o&#776;g&#774;retici go&#776;ru&#776;s&#807;leri. Aydın TO&#776;MER Dil Dergisi, 6(2), 121-159. \r\nKaratay, H., Kaya, S. ve Bas&#807;er, D. (2021). Tu&#776;rkc&#807;enin yabancı dil olarak o&#776;g&#774;retiminde uzaktan eg&#774;itime yo&#776;nelik o&#776;g&#774;renci go&#776;ru&#776;s&#807;leri. RumeliDE Dil ve Edebiyat Aras&#807;tırmaları Dergisi, (24), 223-232. \r\nMEB (2020). Bakan Selc&#807;uk, koronaviru&#776;s'e kars&#807;ı eg&#774;itim alanında alınan tedbirleri ac&#807;ıkladı. https:\/\/www.meb.gov.tr\/bakan-selcuk-koronaviruse-karsi-egitim- alaninda-alinan-tedbirleri-acikladi\/haber\/20497\/tr,web (Erişim created_ati: 01.11.2021)\rNO&#776;zgo&#776;l, M., Sarıkaya. I&#775;. ve O&#776;ztu&#776;rk, M. (2017). O&#776;rgu&#776;n eg&#774;itimde uzaktan eg&#774;itim uygulamalarına ilis&#807;kin o&#776;g&#774;renci ve o&#776;g&#774;retim elemanı deg&#774;erlendirmeleri. Yu&#776;ksek O&#776;g&#774;retim ve Bilim Dergisi, 7(2), 294-304. \r\nTavşancıl, E. ve Aslan, E. (2001). Sözel, yazılı ve diğer materyaller için içerik analizi ve uygulama örnekleri. İstanbul: Epsilon.\r\nUNESCO.(2020). Distance learning strategies, what do we know about effectiveness? http:\/\/www.unesco.org\/covid19EDwebinar (Erişim created_ati: 11.11.2021)\r\nUNICEF (2020). UNICEF AND microsoft launch GLOBAL learning platform TO help address covıd-19 education crisis. https:\/\/www.unicef.org\/press-releases\/unicef- AND-microsoft-launch-GLOBAL-learning-platform-help-address-covid-19-education (Erişim created_ati: 20.11.2021).\r\nWHO (2020). WHO Director-general's opening remarks at the media briefing on COVID-19 - 11 March 2020, https:\/\/www.who.int\/dg\/speeches\/detail\/who-director-general-s-opening-remarks-at-the-media-briefing-on-covid-19---11-march-2020 (Erişim created_ati: 15.11.2021)\r\nYıldırım, A. ve Şimşek, H. (2008). Sosyal bilimlerde nitel araştırma yöntemleri. Ankara: Seçkin Yayıncılık.\r\nYO&#776;K (2020). “YO&#776;K Dersleri Platformu” o&#776;g&#774;rencilerin eris&#807;imine ac&#807;ıldı. https:\/\/www.yok.gov.tr (Erişim created_ati: 15.11.2021)\r\nYurdakul, Y. ve Duman, G. B. (2021). Uzaktan eg&#774;itimle Tu&#776;rkc&#807;enin yabancı dil olarak o&#776;g&#774;retimi su&#776;recinde temel becerilerin gerc&#807;ekles&#807;tirilebilme durumunun o&#776;g&#774;retici go&#776;ru&#776;s&#807;leri u&#776;zerinden deg&#774;erlendirilmesi. RumeliDE Dil ve Edebiyat Aras&#807;tırmaları Dergisi, (23), 167-186. \r\nZorluog&#774;lu, S. L., Deveciog&#774;lu, G. ve Sayın, I&#775;. (2021). Uzaktan Eg&#774;itimin o&#776;g&#774;retim elemanları ac&#807;ısından deg&#774;erlendirilmesi: Covid-19 pandemi su&#776;reci. Ahi Evran U&#776;niversitesi Sosyal Bilimler Enstitu&#776;su&#776; Dergisi, 7(3), 1007- 1025\r\n",
+            "kaynak_dil": "1",
+            "anahtar_kelime": "Türkçenin yabancı dil olarak öğretimi, Covid-19, öğretici",
+            "yayin_created_at": "2021-12-27",
+            "kisaad": "Melanlıoğlu, Deniz, Yabancı Dil Olarak Türkçe Öğreticilerinin Bakış Açısıyla Covid-19 Salgınında Öğretim Süreci, Edebiyat Bilimleri Dergisi, Kış, 2021, Sayı: 1",
+            "dosya": "s1_m1_melanlioglu.pdf",
+            "is_approved": 1,
+            "created_at": "2022-01-24",
+            "created_by": 1,
+            "ip_address": "176.41.24.123",
+            "created_role": 1
+        }
+    },
+    {
+        "name": "gonderilen_makale",
+        "columns": [
+            {
+                "Field": "id",
+                "Type": "int",
+                "Null": "NO",
+                "Key": "PRI",
+                "Default": null,
+                "Extra": "auto_increment"
+            },
+            {
+                "Field": "yazar_sayisi",
+                "Type": "int",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "makale_tur",
+                "Type": "int",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "yazar_adi",
+                "Type": "varchar(200)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "ceviren_adi",
+                "Type": "varchar(50)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "makale_adi",
+                "Type": "varchar(512)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "makale_konu",
+                "Type": "varchar(50)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "anahtar_kelimeler",
+                "Type": "varchar(50)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "dosya",
+                "Type": "varchar(250)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "is_approved",
+                "Type": "tinyint",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "created_at",
+                "Type": "date",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "created_by",
+                "Type": "int",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "created_role",
+                "Type": "int",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            },
+            {
+                "Field": "ip_address",
+                "Type": "varchar(50)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            }
+        ],
+        "sample": {
+            "id": 1,
+            "yazar_sayisi": 1,
+            "makale_tur": 2,
+            "yazar_adi": "Sena Kızılcakaya",
+            "ceviren_adi": "",
+            "makale_adi": "TÜRKÇEYİ YABANCI DİL OLARAK ÖĞRETENLERİN DİJİTAL HİKÂYE KULLANIMI HAKKINDAKİ GÖRÜŞLERİ",
+            "makale_konu": "Türkçeyi yabancı dil olarak öğretimi \/ Türkçeyi ya",
+            "anahtar_kelimeler": "Türkçe eğitim, Türkçenin yabancı dil olarak öğreti",
+            "dosya": "TÜRKÇEYİ YABANCI DİL OLARAK ÖĞRETENLERİN DİJİTAL HİKÂYE KULLANIMI HAKKINDAKİ GÖRÜŞLERİ .docx",
+            "is_approved": 1,
+            "created_at": "2024-05-20",
+            "created_by": 14,
+            "created_role": 4,
+            "ip_address": "78.175.234.3"
+        }
+    },
+    {
+        "name": "makale_tur",
+        "columns": [
+            {
+                "Field": "id",
+                "Type": "int",
+                "Null": "NO",
+                "Key": "PRI",
+                "Default": null,
+                "Extra": "auto_increment"
+            },
+            {
+                "Field": "makale_turu",
+                "Type": "varchar(20)",
+                "Null": "YES",
+                "Key": "",
+                "Default": null,
+                "Extra": ""
+            }
+        ],
+        "sample": {
+            "id": 1,
+            "makale_turu": "Jenerik"
+        }
+    }
+]

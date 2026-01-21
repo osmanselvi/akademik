@@ -1,0 +1,336 @@
+--- uye ---
+Array
+(
+    [Field] => id
+    [Type] => int
+    [Null] => NO
+    [Key] => PRI
+    [Default] => 
+    [Extra] => auto_increment
+)
+Array
+(
+    [Field] => yonetim_id
+    [Type] => int
+    [Null] => NO
+    [Key] => 
+    [Default] => 0
+    [Extra] => 
+)
+Array
+(
+    [Field] => unvan
+    [Type] => varchar(50)
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => orcid
+    [Type] => varchar(20)
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => un_fak_ens_abd
+    [Type] => varchar(250)
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => bolum
+    [Type] => varchar(50)
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => adres_tipi
+    [Type] => varchar(50)
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => uzmanlik_alan
+    [Type] => varchar(255)
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => is_approved
+    [Type] => tinyint
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => created_at
+    [Type] => varchar(10)
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => created_by
+    [Type] => int
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => created_role
+    [Type] => int
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => ip_address
+    [Type] => varchar(50)
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+--- yorum ---
+Array
+(
+    [Field] => id
+    [Type] => int
+    [Null] => NO
+    [Key] => PRI
+    [Default] => 
+    [Extra] => auto_increment
+)
+Array
+(
+    [Field] => kitap_id
+    [Type] => int
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => yazar
+    [Type] => varchar(50)
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => metin
+    [Type] => text
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => okundu
+    [Type] => int
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => is_approved
+    [Type] => tinyint
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => created_at
+    [Type] => date
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => created_by
+    [Type] => int
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => ip_address
+    [Type] => varchar(50)
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => created_role
+    [Type] => varchar(50)
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+--- gonderilen_makale ---
+Array
+(
+    [Field] => id
+    [Type] => int
+    [Null] => NO
+    [Key] => PRI
+    [Default] => 
+    [Extra] => auto_increment
+)
+Array
+(
+    [Field] => yazar_sayisi
+    [Type] => int
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => makale_tur
+    [Type] => int
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => yazar_adi
+    [Type] => varchar(200)
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => ceviren_adi
+    [Type] => varchar(50)
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => makale_adi
+    [Type] => varchar(512)
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => makale_konu
+    [Type] => varchar(50)
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => anahtar_kelimeler
+    [Type] => varchar(50)
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => dosya
+    [Type] => varchar(250)
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => is_approved
+    [Type] => tinyint
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => created_at
+    [Type] => date
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => created_by
+    [Type] => int
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => created_role
+    [Type] => int
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
+Array
+(
+    [Field] => ip_address
+    [Type] => varchar(50)
+    [Null] => YES
+    [Key] => 
+    [Default] => 
+    [Extra] => 
+)
