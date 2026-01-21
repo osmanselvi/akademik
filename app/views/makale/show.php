@@ -70,9 +70,12 @@
                         </div>
                         <div class="d-flex gap-2">
                             <?php if (!empty($makale->dosya)): ?>
-                            <a href="<?= get_image_url($makale->dosya) ?>" class="btn btn-danger px-4" target="_blank">
+                            <a href="/makale/indir/<?= $makale->id ?>" class="btn btn-danger px-4">
                                 <i class="bi bi-file-earmark-pdf me-2"></i> Tam Metin Gör (PDF)
                             </a>
+                            <button class="btn btn-outline-danger px-4" onclick="openPdfPreview('<?= get_image_url($makale->dosya) ?>')">
+                                <i class="bi bi-eye me-2"></i> Önizle
+                            </button>
                             <?php endif; ?>
                             <button class="btn btn-outline-primary px-4" onclick="window.print()">
                                 <i class="bi bi-printer me-2"></i> Yazdır
@@ -93,6 +96,25 @@
                         <button class="btn btn-link btn-sm mt-2 p-0 text-decoration-none" onclick="copyCitation()">
                             <i class="bi bi-clipboard"></i> Atıfı Kopyala
                         </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PDF Preview Modal -->
+<div class="modal fade" id="pdfPreviewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white border-0">
+                <h5 class="modal-title"><i class="bi bi-file-earmark-pdf me-2"></i> Makale Önizleme</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0 bg-light">
+                <div id="pdfContainer" class="h-100 w-100 d-flex align-items-center justify-content-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Yükleniyor...</span>
                     </div>
                 </div>
             </div>
@@ -123,6 +145,36 @@ function copyCitation() {
     const text = document.querySelector('.border-dashed').innerText;
     navigator.clipboard.writeText(text).then(() => {
         alert('Atıf kopyalandı!');
+    });
+}
+
+function openPdfPreview(url) {
+    const modalElement = document.getElementById('pdfPreviewModal');
+    const modal = new bootstrap.Modal(modalElement);
+    const container = document.getElementById('pdfContainer');
+    
+    // Clear previous content
+    container.innerHTML = '<div class="spinner-border text-primary" role="status"><span class="visually-hidden">Yükleniyor...</span></div>';
+    
+    modal.show();
+
+    // Load PDF in iframe/object
+    // Google Docs Viewer as fallback or direct embed
+    // Using simple object tag for native support
+    setTimeout(() => {
+        container.innerHTML = `
+            <object data="${url}" type="application/pdf" width="100%" height="100%">
+                <div class="text-center p-5">
+                    <p class="mb-3">Tarayıcınız PDF önizlemeyi desteklemiyor.</p>
+                    <a href="${url}" class="btn btn-primary" target="_blank">Dosyayı İndir</a>
+                </div>
+            </object>
+        `;
+    }, 500); // Small delay for animation
+    
+    // Cleanup on close to stop memory leaks
+    modalElement.addEventListener('hidden.bs.modal', function () {
+        container.innerHTML = '';
     });
 }
 </script>

@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= e($pageTitle ?? 'Edebiyat Bilimleri Dergisi') ?></title>
+    <title><?= setting('SiteTitle', 'Edebiyat Bilimleri Dergisi') ?></title>
+    <meta name="description" content="<?= setting('SiteDescription', 'Akademik Dergi Platformu') ?>">
+    <meta name="keywords" content="<?= setting('SiteKeywords', 'dergi, makale, akademik') ?>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
     <style>
@@ -12,8 +14,52 @@
             background: #f8f9fa;
         }
         .navbar {
+            background: rgba(248, 249, 250, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 12px 0;
+            position: relative;
+            z-index: 1050;
+        }
+        .navbar-brand img {
+            height: 45px !important;
+            transition: transform 0.3s ease;
+        }
+        .navbar-brand:hover img {
+            transform: scale(1.05);
+        }
+        .nav-link {
+            color: #2d3748 !important;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            margin: 0 5px;
+        }
+        .nav-link:hover {
+            color: #667eea !important;
+        }
+        .nav-link i {
+            color: #667eea;
+            margin-right: 5px;
+        }
+        .navbar-toggler {
+            border: none;
+            color: #2d3748;
+        }
+        .navbar-toggler-icon {
+            filter: brightness(0);
+        }
+        .navbar .btn-primary {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: none;
+            color: white !important;
+            padding: 8px 25px !important;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        .navbar .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            color: white !important;
         }
         .navbar-brand {
             font-weight: bold;
@@ -156,8 +202,8 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
             <a class="navbar-brand fw-bold" href="/">
                 <img src="/images/ebilimlogo1.png" alt="Edebiyat Bilimleri" height="34" class="d-inline-block align-text-top">
             </a>
@@ -231,10 +277,30 @@
                                             <i class="bi bi-people me-2 text-primary"></i> Kullanıcı Yönetimi
                                         </a>
                                     </li>
+                                    <li>
+                                        <a class="dropdown-item py-2" href="/admin/settings">
+                                            <i class="bi bi-gear me-2 text-primary"></i> Genel Ayarlar
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item py-2" href="/admin/logs">
+                                            <i class="bi bi-terminal me-2 text-primary"></i> Sistem Logları
+                                        </a>
+                                    </li>
                                     <?php endif; ?>
+                                    <li>
+                                        <a class="dropdown-item py-2" href="/admin/stats">
+                                            <i class="bi bi-graph-up me-2 text-primary"></i> İstatistikler
+                                        </a>
+                                    </li>
                                     <li>
                                         <a class="dropdown-item py-2" href="/admin/kurul">
                                             <i class="bi bi-person-lines-fill me-2 text-primary"></i> Dergi Kurulları
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item py-2" href="/admin/email-templates">
+                                            <i class="bi bi-envelope-paper me-2 text-primary"></i> E-posta Şablonları
                                         </a>
                                     </li>
                                     <li>
@@ -258,7 +324,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-outline-light btn-sm ms-2 px-3" href="/kayit">
+                            <a class="nav-link btn btn-primary text-white ms-2 px-3 rounded-pill shadow-sm" href="/kayit" style="color: white !important;">
                                 Kayıt Ol
                             </a>
                         </li>

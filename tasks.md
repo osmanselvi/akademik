@@ -11,23 +11,24 @@
 - [x] File upload validasyonu ekle (dosya tipi, boyut, MIME kontrolü)
 - [x] Rate limiting ekle (brute force koruması) - (Temel kontrol yapıldı)
 - [x] SQL injection testleri yap
-- [ ] XSS vulnerability taraması yap
+- [x] XSS vulnerability taraması yap (DB, XSS headers ve Type Casting eklendi)
 
 ### Veri Bütünlüğü
-- [ ] Veritabanı foreign key constraints ekle
-- [ ] Cascading delete/update kuralları tanımla
-- [ ] Yetim kayıtları temizle
+- [x] Veritabanı foreign key constraints ekle (yonetim, online_makale, dergi_kunye)
+- [x] Cascading delete/update kuralları tanımla (Makale silme rutini + DB Cascade)
+- [x] Yetim kayıtları temizle
 - [x] Database index optimizasyonu
 - [x] Veri yedekleme stratejisi oluştur
 
 ## 🟡 Yüksek Öncelikli Görevler
 
 ### Kullanıcı Deneyimi
-- [x] Responsive tasarım iyileştirmeleri
+- [x] Responsive tasarım iyileştirmeleri (Tamamlandı)
   - [x] Mobil menü optimizasyonu
   - [x] Tablet görünüm düzenlemeleri
   - [x] Touch-friendly butonlar
   - [x] Masaüstü görünüm düzeltmeleri
+  - [x] Global responsive kararlılık testleri ve iyileştirmeleri (Tamamlandı)
 - [x] Form validasyonu geliştir
   - [x] Client-side validation (JavaScript)
   - [x] Server-side validation iyileştir
@@ -45,14 +46,14 @@
   - [x] Kurul üyesi yönetimi (CRUD)
   - [x] Unvan, Kurul ve Görev tanımlama sayfaları
   - [x] Kamu arayüzü: Üst menü "Kurullar" dropdown ve kurul sayfaları
-- [ ] Sayfalama (pagination) ekle
+- [x] Sayfalama (pagination) ekle (Temel alt yapı ve Admin/Dergi listeleri)
 
 ### Performans
-- [ ] Query optimizasyonu
-  - [ ] N+1 query problemlerini çöz
+- [x] Query optimizasyonu
+  - [x] N+1 query problemlerini çöz
   - [ ] Eager loading ekle
   - [ ] Query cache kullan
-- [ ] Statik dosya optimizasyonu
+- [x] Statik dosya optimizasyonu (Gzip + Browser Caching enabled via .htaccess)
   - [ ] CSS/JS minification
   - [ ] Image optimization
   - [ ] Lazy loading
@@ -63,8 +64,8 @@
 
 ### Hata Yönetimi
 - [x] Merkezi hata yönetimi sistemi
-- [/] Loglama mekanizması
-  - [ ] Error logs
+- [x] Loglama mekanizması
+  - [x] Error logs
   - [ ] Access logs
   - [x] Activity logs (Temel seviye)
 - [x] Kullanıcı dostu hata sayfaları
@@ -73,7 +74,7 @@
 ## 🟢 Orta Öncelikli Görevler
 
 ### Fonksiyonel İyileştirmeler
-- [ ] PDF önizleme özelliği
+- [x] PDF önizleme özelliği (Modal Preview)
 - [ ] Makale istatistikleri dashboard'u
   - [ ] Görüntülenme sayıları
   - [ ] İndirme sayıları
@@ -86,8 +87,11 @@
   - [ ] Aktivasyon emaili
   - [ ] Şifre sıfırlama emaili
   - [ ] Bildirim emailleri
-- [ ] Hakem değerlendirme sistemi geliştir
-  - [ ] Online form
+- [/] Hakem değerlendirme sistemi geliştir
+  - [ ] Veritabanı tasarımı (makale_hakem, degerlendirme)
+  - [ ] Admin: Hakem atama arayüzü
+  - [ ] Hakem: Değerlendirme paneli
+  - [ ] Online değerlendirme formu
   - [ ] Otomatik bildirimler
   - [ ] Süreç takibi
 
@@ -274,6 +278,11 @@
   - [x] Kurumsal logo (ebilimlogo1.png) Navbar ve Hero entegrasyonu
   - [x] Hero section hizalama (Sola yaslı, daha okunaklı yapı)
   - [x] Navbar logo optimizasyonu (Boyut küçültme)
+  - [x] Ana sayfa modernizasyonu (Kartlar, animasyonlar)
+  - [x] Dergi detay sayfası modernizasyonu (Glassmorphism, yeni kart yapısı)
+  - [x] Arşiv sayfası modernizasyonu (Grid yapı, filtreler)
+  - [x] Künye sayfası modernizasyonu (İkonlu grid layout)
+  - [x] Navbar renk ve stil güncellemeleri (Off-white, koyu text)
 - [x] Dergi Sayı Yönetimi (Journal Issues)
   - [x] DergiTanim modeli
   - [x] Admin CRUD (Yönetim, Ekleme, Düzenleme)

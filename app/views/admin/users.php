@@ -55,7 +55,19 @@
                         </table>
                     </div>
                 </div>
+                </div>
             </div>
+            
+            <!-- Pagination -->
+            <div class="mt-4 d-flex justify-content-between align-items-center">
+                <div class="text-secondary small">
+                    <?= $paginator->getInfo() ?>
+                </div>
+                <div>
+                    <?= $paginator->getLinks() ?>
+                </div>
+            </div>
+            
         </div>
     </div>
 </div>

@@ -48,10 +48,11 @@ $router->post('/profil/guncelle', 'UserController@updateProfile');
 $router->post('/profil/sifre', 'UserController@changePassword');
 $router->post('/profil/imza-olustur', 'UserController@createSignature');
 
-// Admin routes
-$router->get('/admin/users', 'AdminController@users');
-$router->post('/admin/users/delete/{id}', 'AdminController@deleteUser');
-$router->post('/admin/users/update-group/{id}', 'AdminController@updateUserGroup');
+// User Management
+$router->get('/admin/users', 'Admin\UserController@index');
+$router->get('/admin/users/edit/{id}', 'Admin\UserController@edit');
+$router->post('/admin/users/update/{id}', 'Admin\UserController@update');
+$router->post('/admin/users/delete/{id}', 'Admin\UserController@delete');
 
 // Board Management (Dergi Kurulları)
 $router->get('/admin/kurul', 'Admin\KurulController@index');
@@ -142,10 +143,25 @@ $router->post('/submissions/sign/{id}', 'SubmissionController@signAgreement');
 
 // Hakem Süreci & Gönderiler
 $router->get('/admin/submissions', 'Admin\SubmissionController@index');
+$router->get('/admin/submissions/assign/{id}', 'Admin\SubmissionController@assign');
+$router->post('/admin/submissions/assign/{id}', 'Admin\SubmissionController@storeAssignment');
 $router->get('/admin/submissions/revision/{id}', 'Admin\SubmissionController@revision');
 $router->post('/admin/submissions/revision/{id}', 'Admin\SubmissionController@sendRevisionRequest');
 $router->get('/admin/submissions/approve/{id}', 'Admin\SubmissionController@approve');
 $router->post('/admin/submissions/delete/{id}', 'Admin\SubmissionController@delete');
+$router->post('/admin/submissions/bulk-action', 'Admin\SubmissionController@bulkAction');
+
+// Site Settings
+$router->get('/admin/settings', 'Admin\SettingsController@index');
+$router->post('/admin/settings/update', 'Admin\SettingsController@update');
+
+// Logs
+$router->get('/admin/logs', 'Admin\LogController@index');
+
+// Reviewer Routes
+$router->get('/reviewer', 'ReviewerController@index');
+$router->get('/reviewer/show/{id}', 'ReviewerController@show');
+$router->post('/reviewer/store/{id}', 'ReviewerController@store');
 
 // Destek Talepleri
 $router->get('/support', 'SupportController@index');
@@ -164,5 +180,16 @@ $router->get('/sifremi-unuttum', 'AuthController@showForgotPassword');
 $router->post('/sifremi-unuttum', 'AuthController@sendResetLink');
 $router->get('/sifre-sifirla/{token}', 'AuthController@showResetPassword');
 $router->post('/sifre-sifirla', 'AuthController@updatePassword');
+
+// İstatistikler
+$router->get('/admin/stats', 'Admin\StatsController@index');
+
+// E-posta Şablonları
+$router->get('/admin/email-templates', 'Admin\EmailTemplateController@index');
+$router->get('/admin/email-templates/edit/{id}', 'Admin\EmailTemplateController@edit');
+$router->post('/admin/email-templates/update/{id}', 'Admin\EmailTemplateController@update');
+
+// Makale İndirme (Sayaçlı)
+$router->get('/makale/indir/{id}', 'MakaleController@download');
 
 return $router;

@@ -18,6 +18,49 @@ if (file_exists(__DIR__ . '/.env')) {
     $dotenv->safeLoad(); // Use safeLoad to avoid errors
 }
 
+// Initialize Logger
+$logger = new \App\Helpers\Logger();
+
+// Global Exception Handler
+set_exception_handler(function ($e) use ($logger) {
+    global $appDebug;
+    $logger->error("Uncaught Exception: " . $e->getMessage(), [
+        'file' => $e->getFile(),
+        'line' => $e->getLine(),
+        'trace' => $e->getTraceAsString()
+    ]);
+
+    if ($appDebug === 'true' || $appDebug === true) {
+        // Default PHP handling will display it if display_errors is on
+        throw $e;
+    } else {
+        http_response_code(500);
+        echo "Sunucu hatası oluştu. Lütfen daha sonra tekrar deneyiniz.";
+        exit;
+    }
+});
+
+// Global Error Handler
+set_error_handler(function ($errno, $errstr, $errfile, $errline) use ($logger) {
+    if (!(error_reporting() & $errno)) {
+        return false;
+    }
+    
+    $type = match($errno) {
+        E_USER_ERROR => 'FATAL',
+        E_USER_WARNING => 'WARNING',
+        E_USER_NOTICE => 'NOTICE',
+        default => 'UNKNOWN'
+    };
+
+    $logger->error("PHP Error [$type]: $errstr", [
+        'file' => $errfile,
+        'line' => $errline
+    ]);
+
+    return false; // Let PHP handle standard display/reporting based on ini settings
+});
+
 // Error reporting based on environment
 $appDebug = $_ENV['APP_DEBUG'] ?? 'true';
 if ($appDebug === 'true' || $appDebug === true) {
@@ -86,7 +129,7 @@ function getDatabase() {
 $baglanti = getDatabase();
 
 // Load helper functions
-require_once __DIR__ . '/app/helpers/functions.php';
+require_once __DIR__ . '/app/Helpers/functions.php';
 
 return [
     'db' => $baglanti,

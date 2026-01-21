@@ -3,7 +3,7 @@
         <hr>
         <p>&copy; <?php echo date('Y'); ?> Edebiyat Bilimleri Dergisi. Tüm hakları saklıdır.</p>
 <?php if (isLoggedIn()): ?>
-    <a href="http://localhost:8080/submissions/create" class="btn btn-primary mt-2">Makale Gönder</a>
+    <a href="<?php echo url('/submissions/create'); ?>" class="btn btn-primary mt-2">Makale Gönder</a>
 <?php else: ?>
     <a href="/login" class="btn btn-primary mt-2">Makale Gönder</a>
 <?php endif; ?>

@@ -375,6 +375,11 @@
             </div>
         </div>
     <?php endforeach; ?>
+
+    <!-- Pagination -->
+    <div class="col-12 mt-4 d-flex justify-content-center" data-aos="fade-up">
+        <?= $paginator->getLinks() ?>
+    </div>
 </div>
 
 
@@ -396,31 +401,46 @@
 <!-- Features Section -->
 <div class="row mt-5 g-4">
     <div class="col-md-4" data-aos="flip-left">
-        <div class="feature-box">
-            <div class="feature-icon bg-gradient-1">
-                <i class="bi bi-book"></i>
+        <a href="/submissions/create" class="text-decoration-none h-100 d-block">
+            <div class="feature-box">
+                <div class="feature-icon bg-gradient-1">
+                    <i class="bi bi-cloud-arrow-up"></i>
+                </div>
+                <h5>Makale Gönder</h5>
+                <p>Makalenizi sisteme yükleyin ve hakem sürecini şeffaf bir şekilde takip edin.</p>
+                <div class="feature-link mt-3 text-primary fw-bold small">
+                    Hemen Başla <i class="bi bi-arrow-right"></i>
+                </div>
             </div>
-            <h5>Makale Gönder</h5>
-            <p>Makalenizi sisteme yükleyin ve hakem sürecini takip edin.</p>
-        </div>
+        </a>
     </div>
     <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
-        <div class="feature-box">
-            <div class="feature-icon bg-gradient-2">
-                <i class="bi bi-search"></i>
+        <a href="/dergiler" class="text-decoration-none h-100 d-block">
+            <div class="feature-box">
+                <div class="feature-icon bg-gradient-2">
+                    <i class="bi bi-archive"></i>
+                </div>
+                <h5>Arşiv</h5>
+                <p>Geçmiş sayılarımıza, yayınlanmış tüm cilt ve makalelere kolayca erişin.</p>
+                <div class="feature-link mt-3 text-danger fw-bold small">
+                    Sayıları İncele <i class="bi bi-arrow-right"></i>
+                </div>
             </div>
-            <h5>Arşiv</h5>
-            <p>Geçmiş sayılarımıza ve makalelere kolayca erişin.</p>
-        </div>
+        </a>
     </div>
     <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
-        <div class="feature-box">
-            <div class="feature-icon bg-gradient-3">
-                <i class="bi bi-people"></i>
+        <a href="/kurul/2" class="text-decoration-none h-100 d-block">
+            <div class="feature-box">
+                <div class="feature-icon bg-gradient-3">
+                    <i class="bi bi-people"></i>
+                </div>
+                <h5>Yayın Kurulu</h5>
+                <p>Dergi yönetim kadrosu ve akademik danışma kurulumuz hakkında bilgi edinin.</p>
+                <div class="feature-link mt-3 text-info fw-bold small">
+                    Kurulu Görüntüle <i class="bi bi-arrow-right"></i>
+                </div>
             </div>
-            <h5>Kurul</h5>
-            <p>Yayın ve danışma kurulumuz hakkında bilgi edinin.</p>
-        </div>
+        </a>
     </div>
 </div>
 
@@ -428,16 +448,50 @@
 .feature-box {
     background: white;
     padding: 40px 30px;
-    border-radius: 15px;
+    border-radius: 20px;
     text-align: center;
     height: 100%;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid #edf2f7;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-box::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 4px;
+    background: transparent;
+    transition: background 0.3s ease;
 }
 
 .feature-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-color: rgba(102, 126, 234, 0.2);
+}
+
+.feature-box:hover h5 {
+    color: #667eea;
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    color: white;
+    font-size: 1.8rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease;
+}
+
+.feature-box:hover .feature-icon {
+    transform: rotateY(360deg);
 }
 
 .featur.hero-logo {
