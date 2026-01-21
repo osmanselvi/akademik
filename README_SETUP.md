@@ -22,9 +22,9 @@ copy .env.example .env
 
 ```env
 DB_HOST=localhost
-DB_DATABASE=ebph_server
-DB_USERNAME=root
-DB_PASSWORD=st63pc71x
+DB_DATABASE=akademik_db
+DB_USERNAME=user
+DB_PASSWORD=password
 ```
 
 ### 3. Development Server Başlat
