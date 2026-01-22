@@ -104,6 +104,7 @@ $breadcrumbs = [
                                     <input type="url" name="web_page" class="form-control bg-light border-0 py-2 rounded-end-3" 
                                            value="<?= e($member->web_page) ?>">
                                 </div>
+                                <div class="form-text small text-muted">Örn: https://www.site.com</div>
                             </div>
 
                             <hr class="my-4 text-muted opacity-25">

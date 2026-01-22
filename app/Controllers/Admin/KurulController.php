@@ -169,9 +169,6 @@ class KurulController extends BaseController {
             'is_approved' => isset($_POST['is_approved']) ? 1 : 0
         ];
 
-        // Debug log
-        logger("Kurul üyesi güncelleme isteği. ID: $id, Sira: " . ($data['sira'] ?? 'YOK') . ", Data: " . json_encode($data));
-
         if ($this->yayinKurulModel->update($id, $data)) {
             redirect('/admin/kurul', 'Üye bilgileri güncellendi.', 'success');
         } else {
