@@ -35,7 +35,9 @@ class YayinKurul extends BaseModel {
             $params[] = $filters['is_approved'];
         }
 
-        $sql .= " ORDER BY yk.id DESC";
+        // Sort logic: Ranked items (sira > 0) come first, ordered by sira ASC.
+        // Unranked items (sira = 0 or NULL) come last, ordered by id DESC.
+        $sql .= " ORDER BY (yk.sira IS NULL OR yk.sira = 0) ASC, yk.sira ASC, yk.id DESC";
         
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($params);

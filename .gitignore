@@ -20,11 +20,11 @@ Thumbs.db
 /phpunit.xml
 /.phpunit.result.cache
 
-/imz.php
-/imza.php
+imz.php
+imza.php
 /bootstrap/cache/*
 /storage/sessions/*
-/inspect_stats.php
-/inspect_users.php
-/db_schema_details/
-/database/*.sql
+inspect_stats.php
+inspect_users.php
+db_schema_details*
+bootstrap*

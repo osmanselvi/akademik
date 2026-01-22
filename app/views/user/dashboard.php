@@ -8,7 +8,27 @@
                     </div>
                     <h5 class="fw-bold mb-1"><?= htmlspecialchars($user['name']) ?></h5>
                     <p class="text-secondary small mb-3">
-                        <?= $user['role'] == 1 ? 'Yönetici' : 'Yazar / Okur' ?>
+                           ;
+
+                        <?php
+
+                        function kullaniciRolu($role) {
+                            if ($role == 1) {
+                                return 'Yönetici';
+                            } elseif ($role == 2) {
+                                return 'Editör';
+                            } elseif ($role == 3) {
+                                return 'Hakem';
+                            } elseif ($role == 4) {
+                                return 'Araştırmacı/Yazar';
+                            } elseif ($role == 5) {
+                                return 'Üye';
+                            } else {
+                                return 'Web Site Ziyaretçisi';
+                            }
+                        }
+                        echo kullaniciRolu($user['role']);
+?>
                     </p>
                     <hr>
                     <nav class="nav flex-column text-start gap-2">

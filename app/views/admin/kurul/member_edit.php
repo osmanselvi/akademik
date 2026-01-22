@@ -33,7 +33,12 @@ $breadcrumbs = [
                                     <?php endforeach; ?>
                                 </select>
                             </div>
-                            <div class="col-md-9">
+                            <div class="col-md-2">
+                                <label class="form-label fw-bold small text-secondary">SIRA NO</label>
+                                <input type="number" name="sira" class="form-control bg-light border-0 py-2 rounded-3" 
+                                       value="<?= e($member->sira ?? 0) ?>" required>
+                            </div>
+                            <div class="col-md-7">
                                 <label class="form-label fw-bold small text-secondary">AD SOYAD</label>
                                 <input type="text" name="ad_soyad" class="form-control bg-light border-0 py-2 rounded-3" 
                                        value="<?= e($member->ad_soyad) ?>" required>
